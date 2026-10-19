@@ -1,0 +1,6 @@
+{
+  "name": "Vanguard ZERO Revival: Cardfight Stadium",
+  "description": "An authentic recreation and revival client for the terminated Cardfight!! Vanguard ZERO mobile game with 40-card Zero rules, Intercept shields, Sentinels, Trigger assignments, Twin Drive checks, and solo AI battles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
