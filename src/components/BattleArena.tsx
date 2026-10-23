@@ -1497,6 +1497,7 @@ export const BattleArena: React.FC<BattleArenaProps> = ({
                           setSelectedHandIndex(idx);
                         }
                       }}
+                      onInspect={onSelectCardInspect}
                       showTrigger={true}
                     />
 

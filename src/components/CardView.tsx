@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardData, TriggerType } from '../types/game';
-import { Shield, Sparkles, Swords, Zap, Heart, RotateCcw } from 'lucide-react';
+import { Shield, Sparkles, Swords, Zap, Heart, RotateCcw, Eye } from 'lucide-react';
 
 interface CardViewProps {
   card: CardData;
@@ -8,6 +8,7 @@ interface CardViewProps {
   isPlayable?: boolean;
   isSmall?: boolean;
   onClick?: () => void;
+  onInspect?: (card: CardData) => void;
   showTrigger?: boolean;
 }
 
@@ -17,6 +18,7 @@ export const CardView: React.FC<CardViewProps> = ({
   isPlayable,
   isSmall = false,
   onClick,
+  onInspect,
   showTrigger = false,
 }) => {
   // Clan theme colors
@@ -171,6 +173,18 @@ export const CardView: React.FC<CardViewProps> = ({
                   SENTINEL
                 </span>
               )}
+              {onInspect && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onInspect(card);
+                  }}
+                  className="p-1 rounded bg-slate-900/90 hover:bg-cyan-600 text-slate-300 hover:text-white transition-colors cursor-pointer border border-white/20 shadow-md ml-0.5"
+                  title="View Card Art Side & Rulings"
+                >
+                  <Eye className="w-2.5 h-2.5" />
+                </button>
+              )}
             </div>
           </div>
 
@@ -231,6 +245,18 @@ export const CardView: React.FC<CardViewProps> = ({
                 <span className="text-[8px] font-bold text-amber-300 bg-amber-950/80 px-1 py-0.5 rounded border border-amber-500/50">
                   SENTINEL
                 </span>
+              )}
+              {onInspect && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onInspect(card);
+                  }}
+                  className="p-1 rounded bg-slate-800 hover:bg-cyan-600 text-slate-300 hover:text-white transition-colors cursor-pointer border border-white/20 shadow-md ml-0.5"
+                  title="View Card Art Side & Rulings"
+                >
+                  <Eye className="w-2.5 h-2.5" />
+                </button>
               )}
             </div>
           </div>

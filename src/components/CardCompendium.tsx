@@ -138,7 +138,11 @@ export const CardCompendium: React.FC<CardCompendiumProps> = ({ onSelectCardInsp
                 onClick={() => onSelectCardInspect(card)}
                 className="transform transition-transform hover:-translate-y-1"
               >
-                <CardView card={card} showTrigger={true} />
+                <CardView
+                  card={card}
+                  showTrigger={true}
+                  onInspect={onSelectCardInspect}
+                />
               </div>
             ))}
           </div>
